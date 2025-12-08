@@ -1,14 +1,154 @@
+---
+---
 
-<nav class="flex w-full justify-between items-center px-4 text-gray-800 py-4">
-    <div class="text-lg font-bold">Barbearia Top</div>
-    <ul class="flex space-x-4 items-center">
-        <li><a href="/" class="hover:underline">Sobre</a></li>
-        <li><a href="/services" class="hover:underline">Serviços</a></li>
-        <li><a href="/contact" class="hover:underline">Localização</a></li>
-        <li class="ml-2">
-            <button class=" text-gray-700 px-4 py-1 rounded-lg hover:bg-gray-900 hover:text-white border-2 border-gray-700 cursor-pointer transition-all duration-300 font-semibold">
+<nav class="flex w-full justify-between items-center px-4 text-gray-800 py-5 sticky top-0 bg-neutral-100/90 backdrop-blur-md z-50 border-b border-gray-100/50">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center shadow-lg shadow-red-600/20 group-hover:shadow-red-600/40 transition-shadow">
+            <span class="material-symbols-outlined text-white text-xl">content_cut</span>
+        </div>
+        <div class="flex flex-col">
+            <span class="text-xl font-bold leading-tight">Barbearia <span class="text-red-600">Top</span></span>
+            <span class="text-[10px] text-gray-400 uppercase tracking-widest hidden sm:block">Desde 2014</span>
+        </div>
+    </a>
+    
+    <!-- Mobile menu button -->
+    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl hover:bg-gray-200 transition-colors">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+    </button>
+    
+    <!-- Desktop navigation -->
+    <ul class="hidden md:flex items-center gap-1">
+        <li>
+            <a href="/#sobre" class="px-4 py-2 rounded-xl hover:bg-gray-100 hover:text-red-600 transition-all font-medium flex items-center gap-1">
+                <span class="material-symbols-outlined text-lg">info</span>
+                Sobre
+            </a>
+        </li>
+        <li>
+            <a href="/#servicos" class="px-4 py-2 rounded-xl hover:bg-gray-100 hover:text-red-600 transition-all font-medium flex items-center gap-1">
+                <span class="material-symbols-outlined text-lg">content_cut</span>
+                Serviços
+            </a>
+        </li>
+        <li>
+            <a href="/#precos" class="px-4 py-2 rounded-xl hover:bg-gray-100 hover:text-red-600 transition-all font-medium flex items-center gap-1">
+                <span class="material-symbols-outlined text-lg">payments</span>
+                Preços
+            </a>
+        </li>
+        <li>
+            <a href="/#localizacao" class="px-4 py-2 rounded-xl hover:bg-gray-100 hover:text-red-600 transition-all font-medium flex items-center gap-1">
+                <span class="material-symbols-outlined text-lg">location_on</span>
+                Localização
+            </a>
+        </li>
+        <li class="ml-3">
+            <button class="bg-red-600 text-white px-6 py-2.5 rounded-xl hover:bg-red-700 cursor-pointer transition-all duration-300 font-semibold shadow-lg shadow-red-600/20 hover:shadow-red-600/40 hover:-translate-y-0.5 flex items-center gap-2">
+                <span class="material-symbols-outlined text-lg">calendar_month</span>
                 Agendar
             </button>
         </li>
     </ul>
 </nav>
+
+<!-- Mobile navigation menu -->
+<div id="mobile-menu" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] md:hidden">
+    <div id="mobile-menu-panel" class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl p-6 transform transition-transform duration-300">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white">content_cut</span>
+                </div>
+                <span class="font-bold text-lg">Barbearia Top</span>
+            </div>
+            <button id="close-menu-btn" class="p-2 rounded-xl hover:bg-gray-100 transition-colors">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+        
+        <ul class="flex flex-col gap-2">
+            <li>
+                <a href="/#sobre" class="flex items-center gap-3 px-4 py-4 rounded-xl hover:bg-gray-100 transition-colors font-medium text-gray-700">
+                    <span class="material-symbols-outlined text-red-600">info</span>
+                    Sobre
+                </a>
+            </li>
+            <li>
+                <a href="/#servicos" class="flex items-center gap-3 px-4 py-4 rounded-xl hover:bg-gray-100 transition-colors font-medium text-gray-700">
+                    <span class="material-symbols-outlined text-red-600">content_cut</span>
+                    Serviços
+                </a>
+            </li>
+            <li>
+                <a href="/#precos" class="flex items-center gap-3 px-4 py-4 rounded-xl hover:bg-gray-100 transition-colors font-medium text-gray-700">
+                    <span class="material-symbols-outlined text-red-600">payments</span>
+                    Preços
+                </a>
+            </li>
+            <li>
+                <a href="/#localizacao" class="flex items-center gap-3 px-4 py-4 rounded-xl hover:bg-gray-100 transition-colors font-medium text-gray-700">
+                    <span class="material-symbols-outlined text-red-600">location_on</span>
+                    Localização
+                </a>
+            </li>
+        </ul>
+        
+        <div class="mt-8 pt-8 border-t border-gray-100">
+            <button class="w-full bg-red-600 text-white py-4 rounded-xl font-bold hover:bg-red-700 transition-colors shadow-lg shadow-red-600/30 flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined">calendar_month</span>
+                Agendar Horário
+            </button>
+            
+            <a href="https://wa.me/5511999999999" class="w-full mt-4 bg-green-500 text-white py-4 rounded-xl font-bold hover:bg-green-600 transition-colors flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined">chat</span>
+                WhatsApp
+            </a>
+        </div>
+        
+        <div class="absolute bottom-6 left-6 right-6">
+            <div class="flex justify-center gap-4">
+                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors group">
+                    <img src="/icons/icon_instagram.png" alt="Instagram" class="w-5 h-5 group-hover:invert"/>
+                </a>
+                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors group">
+                    <img src="/icons/icon_facebook.png" alt="Facebook" class="w-5 h-5 group-hover:invert"/>
+                </a>
+                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors group">
+                    <img src="/icons/icon_youtube.png" alt="YouTube" class="w-5 h-5 group-hover:invert"/>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuLinks = mobileMenu?.querySelectorAll('a');
+    
+    function openMenu() {
+        mobileMenu?.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMenu() {
+        mobileMenu?.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+    
+    mobileMenuBtn?.addEventListener('click', openMenu);
+    closeMenuBtn?.addEventListener('click', closeMenu);
+    
+    mobileMenu?.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+            closeMenu();
+        }
+    });
+    
+    menuLinks?.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+</script>
