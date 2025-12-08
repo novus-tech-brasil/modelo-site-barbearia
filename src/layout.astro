@@ -1,0 +1,31 @@
+---
+import Header from "./components/header.astro";
+import Footer from "./components/footer.astro";
+import Navbar from "./components/navbar.astro";
+import "./global.css";
+const { title } = Astro.props;
+---
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,1,0"
+      rel="stylesheet"
+    />
+
+    <Header title={title} />
+  </head>
+  <body
+    class="flex flex-col justify-start items-center w-screen max-w-full min-h-screen bg-neutral-100"
+  >
+    <div class="w-full md:max-w-[60%]">
+      <Navbar />
+      <article class="h-full">
+        <slot />
+      </article>
+      <Footer />
+    </div>
+  </body>
+</html>
