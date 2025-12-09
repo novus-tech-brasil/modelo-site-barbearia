@@ -15,15 +15,17 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
 
-    <Header title={title} />
+    <Header {title} />
   </head>
-  <body
-    class="flex flex-col justify-start items-center w-screen max-w-full min-h-screen bg-neutral-100"
-  >
+  <body class="flex flex-col justify-start items-center w-screen max-w-full min-h-screen bg-neutral-100 overflow-x-hidden">
+    <img src="tesoura.png" class="fixed z-0 top-[700px] left-[100px] h-[200px] w-[200px] rotate-[160deg] opacity-50 blur-sm hidden lg:flex" />
+    <img src="duastesouras.png" class="fixed z-0 top-[200px] right-[10px] h-[400px] w-[300px] rotate-[160deg] opacity-50 blur-sm hidden lg:flex" />
+    <img src="poste.png" class="fixed z-0 top-[600px] right-[-100px] h-[500px] w-[500px] rotate-[160deg] opacity-50 blur-sm hidden lg:flex" />
+    <img src="tesoura.png" class="fixed z-0 top-[50px] left-[10px] h-[300px] w-[300px] rotate-[70deg] opacity-50 blur-sm hidden lg:flex" />
     <div class="md:max-w-[60%] w-full">
       <Navbar />
       <article class="h-full">
-        <slot/>
+        <slot />
       </article>
       <Footer />
     </div>
