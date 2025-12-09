@@ -1,35 +1,37 @@
 ---
 import Layout from "../layout.astro";
+const nome = "Otarola";
+const hrefAgendar = "https://sites.appbarber.com.br/agendamento/barbeariaotarol-tlho";
 ---
 
 <Layout title="Home Page">
 	<!-- Hero Section -->
 	<section class="grid grid-cols-1 md:grid-cols-2 mt-6 md:mt-10 min-h-[85vh] items-center">
 		<div class="flex flex-col justify-center items-start px-4 gap-4 order-2 md:order-1">
-			<span class="bg-red-100 text-red-600 px-4 py-1 rounded-full text-sm font-semibold tracking-wide animate-pulse">
+			<span class="bg-primary/20 text-primary px-4 py-1 rounded-full text-sm font-semibold tracking-wide animate-pulse">
 				✂️ Novidade: Agendamento Online
 			</span>
-			<p class="text-gray-500 font-semibold uppercase tracking-widest text-sm">
-				Qualidade e preço baixo!
-			</p>
+			<p class="text-gray-500 font-semibold uppercase tracking-widest text-sm">Qualidade e preço baixo!</p>
 			<h1 class="text-5xl md:text-7xl font-bold text-gray-900 leading-tight">
-				Barbearia <span class="text-red-600 relative">Top
+				Barbearia <span class="text-primary relative"
+					>{nome}
 					<svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 100 10" preserveAspectRatio="none">
-						<path d="M0,5 Q50,10 100,5" stroke="#dc2626" stroke-width="3" fill="none"/>
+						<path d="M0,5 Q50,10 100,5" stroke="var(--color-primary)" stroke-width="3" fill="none"></path>
 					</svg>
 				</span>
 			</h1>
 			<p class="text-gray-600 font-light text-lg max-w-md leading-relaxed">
-				Aqui na barbearia top você encontra os melhores serviços com
-				qualidade e preço baixo. Venha conhecer nosso espaço!
+				Aqui na barbearia {nome} você encontra os melhores serviços com qualidade e preço baixo. Venha conhecer nosso espaço!
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
-				<button
-					class="bg-red-600 text-white px-8 py-3 rounded-xl hover:bg-red-700 cursor-pointer transition-all duration-300 font-semibold shadow-lg shadow-red-600/30 hover:shadow-xl hover:shadow-red-600/40 hover:-translate-y-1 flex items-center justify-center gap-2"
+				<a
+					class="bg-primary text-white px-8 py-3 rounded-xl hover:bg-primary cursor-pointer transition-all duration-300 font-semibold shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-1 flex items-center justify-center gap-2"
+					href={hrefAgendar}
+					target="_blank"
 				>
 					<span class="material-symbols-outlined">calendar_month</span>
 					Agende seu horário
-				</button>
+				</a>
 				<button
 					class="bg-white text-gray-800 px-8 py-3 rounded-xl hover:bg-gray-50 border-2 border-gray-200 cursor-pointer transition-all duration-300 font-semibold flex items-center justify-center gap-2"
 				>
@@ -62,7 +64,7 @@ import Layout from "../layout.astro";
 						<span class="material-symbols-outlined text-green-600">verified</span>
 					</div>
 					<div>
-						<p class="text-2xl font-bold text-gray-900">10+</p>
+						<p class="text-2xl font-bold text-gray-900">2+</p>
 						<p class="text-xs text-gray-500">Anos de experiência</p>
 					</div>
 				</div>
@@ -72,12 +74,14 @@ import Layout from "../layout.astro";
 			<div class="relative">
 				<img src="imagemInicio.png" class="w-full h-auto object-contain relative z-10" />
 				<!-- Decorative elements -->
-				<div class="absolute -top-4 -right-4 w-24 h-24 bg-red-600/10 rounded-full blur-2xl"></div>
+				<div class="absolute -{nome}-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
 				<div class="absolute -bottom-4 -left-4 w-32 h-32 bg-yellow-500/10 rounded-full blur-2xl"></div>
 			</div>
 			<!-- Promo Card -->
-			<div class="absolute bottom-4 z-50 left-4 bg-white p-4 rounded-2xl shadow-2xl border border-gray-100 hidden md:flex items-center gap-3 animate-bounce-slow">
-				<div class="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center">
+			<div
+				class="absolute bottom-4 z-50 left-4 bg-white p-4 rounded-2xl shadow-2xl border border-gray-100 hidden md:flex items-center gap-3 animate-bounce-slow"
+			>
+				<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
 					<span class="material-symbols-outlined text-white">local_offer</span>
 				</div>
 				<div>
@@ -93,7 +97,7 @@ import Layout from "../layout.astro";
 		<div class="bg-gray-900 rounded-2xl p-6 md:p-8 grid grid-cols-1 md:grid-cols-4 gap-6">
 			<div class="flex items-center gap-4 text-white">
 				<div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center">
-					<span class="material-symbols-outlined text-red-500 text-3xl">schedule</span>
+					<span class="material-symbols-outlined text-primary text-3xl">schedule</span>
 				</div>
 				<div>
 					<p class="font-bold text-lg">Horário Flexível</p>
@@ -102,7 +106,7 @@ import Layout from "../layout.astro";
 			</div>
 			<div class="flex items-center gap-4 text-white">
 				<div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center">
-					<span class="material-symbols-outlined text-red-500 text-3xl">payments</span>
+					<span class="material-symbols-outlined text-primary text-3xl">payments</span>
 				</div>
 				<div>
 					<p class="font-bold text-lg">Preço Justo</p>
@@ -111,16 +115,16 @@ import Layout from "../layout.astro";
 			</div>
 			<div class="flex items-center gap-4 text-white">
 				<div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center">
-					<span class="material-symbols-outlined text-red-500 text-3xl">workspace_premium</span>
+					<span class="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
 				</div>
 				<div>
 					<p class="font-bold text-lg">Equipe Expert</p>
-					<p class="text-gray-400 text-sm">Profissionais top</p>
+					<p class="text-gray-400 text-sm">Profissionais {nome}</p>
 				</div>
 			</div>
 			<div class="flex items-center gap-4 text-white">
 				<div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center">
-					<span class="material-symbols-outlined text-red-500 text-3xl">local_parking</span>
+					<span class="material-symbols-outlined text-primary text-3xl">local_parking</span>
 				</div>
 				<div>
 					<p class="font-bold text-lg">Estacionamento</p>
@@ -133,12 +137,8 @@ import Layout from "../layout.astro";
 	<!-- Services Section -->
 	<section class="mt-24" id="servicos">
 		<div class="flex flex-col justify-center items-center gap-4">
-			<span class="bg-red-100 text-red-600 px-4 py-1 rounded-full text-sm font-semibold">
-				Nossos Serviços
-			</span>
-			<h2 class="text-center text-3xl md:text-5xl font-bold text-gray-900">
-				Serviços Populares
-			</h2>
+			<span class="bg-primary/20 text-primary px-4 py-1 rounded-full text-sm font-semibold"> Nossos Serviços </span>
+			<h2 class="text-center text-3xl md:text-5xl font-bold text-gray-900">Serviços Populares</h2>
 			<p class="text-gray-500 text-center max-w-lg">
 				Oferecemos uma variedade de serviços para deixar você ainda mais estiloso. Confira nossos cortes mais pedidos!
 			</p>
@@ -146,83 +146,112 @@ import Layout from "../layout.astro";
 
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 px-2">
 			<!-- Service Card 1 -->
-			<div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+			<div
+				class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
+			>
 				<div class="relative h-[300px] overflow-hidden">
-					<img src="servico1.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+					<img
+						src="servico1.jpg"
+						class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+					/>
 					<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-					<div class="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-xl font-bold shadow-lg">
+					<div class="absolute {nome}-4 right-4 bg-primary text-white px-4 py-2 rounded-xl font-bold shadow-lg">
 						R$ 45
 					</div>
 					<div class="absolute bottom-4 left-4 right-4">
-						<span class="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
-							⏱️ 45 min
-						</span>
+						<span class="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full"> ⏱️ 45 min </span>
 					</div>
 				</div>
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-gray-900 mb-2">Barba e Cabelo</h3>
-					<p class="text-gray-500 mb-4">O combo perfeito do homem moderno. Inclui corte, barba alinhada e finalização.</p>
-					<button class="w-full bg-gray-900 text-white py-3 rounded-xl font-semibold hover:bg-red-600 transition-colors duration-300 flex items-center justify-center gap-2">
+					<p class="text-gray-500 mb-4">
+						O combo perfeito do homem moderno. Inclui corte, barba alinhada e finalização.
+					</p>
+					<a
+						class="w-full bg-gray-900 text-white py-3 rounded-xl font-semibold hover:bg-primary transition-colors duration-300 flex items-center justify-center gap-2"
+						href={hrefAgendar}
+						target="_blank"
+					>
 						<span class="material-symbols-outlined">calendar_month</span>
 						Agendar
-					</button>
+					</a>
 				</div>
 			</div>
 
 			<!-- Service Card 2 - Featured -->
-			<div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-red-600 relative">
-				<div class="absolute -top-0 left-1/2 -translate-x-1/2 bg-red-600 text-white px-6 py-2 rounded-b-xl font-bold text-sm z-20">
+			<div
+				class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-primary relative"
+			>
+				<div
+					class="absolute -{nome}-0 left-1/2 -translate-x-1/2 bg-primary text-white px-6 py-2 rounded-b-xl font-bold text-sm z-20"
+				>
 					⭐ Mais Popular
 				</div>
 				<div class="relative h-[300px] overflow-hidden">
-					<img src="servico2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+					<img
+						src="servico2.jpg"
+						class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+					/>
 					<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-					<div class="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-xl font-bold shadow-lg">
+					<div class="absolute {nome}-4 right-4 bg-primary text-white px-4 py-2 rounded-xl font-bold shadow-lg">
 						R$ 35
 					</div>
 					<div class="absolute bottom-4 left-4 right-4">
-						<span class="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
-							⏱️ 30 min
-						</span>
+						<span class="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full"> ⏱️ 30 min </span>
 					</div>
 				</div>
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-gray-900 mb-2">Degradê</h3>
-					<p class="text-gray-500 mb-4">O corte mais pedido! Transição suave e moderna que combina com qualquer estilo.</p>
-					<button class="w-full bg-red-600 text-white py-3 rounded-xl font-semibold hover:bg-red-700 transition-colors duration-300 flex items-center justify-center gap-2 shadow-lg shadow-red-600/30">
+					<p class="text-gray-500 mb-4">
+						O corte mais pedido! Transição suave e moderna que combina com qualquer estilo.
+					</p>
+					<a
+						class="w-full bg-primary text-white py-3 rounded-xl font-semibold hover:bg-primary transition-colors duration-300 flex items-center justify-center gap-2 shadow-lg shadow-primary/30"
+						href={hrefAgendar}
+						target="_blank"
+					>
 						<span class="material-symbols-outlined">calendar_month</span>
 						Agendar
-					</button>
+					</a>
 				</div>
 			</div>
 
 			<!-- Service Card 3 -->
-			<div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+			<div
+				class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
+			>
 				<div class="relative h-[300px] overflow-hidden">
-					<img src="servico3.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+					<img
+						src="servico3.jpg"
+						class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+					/>
 					<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-					<div class="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-xl font-bold shadow-lg">
+					<div class="absolute {nome}-4 right-4 bg-primary text-white px-4 py-2 rounded-xl font-bold shadow-lg">
 						R$ 30
 					</div>
 					<div class="absolute bottom-4 left-4 right-4">
-						<span class="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
-							⏱️ 25 min
-						</span>
+						<span class="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full"> ⏱️ 25 min </span>
 					</div>
 				</div>
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-gray-900 mb-2">Social</h3>
-					<p class="text-gray-500 mb-4">O clássico que nunca sai de moda. Ideal para o dia a dia e ocasiões especiais.</p>
-					<button class="w-full bg-gray-900 text-white py-3 rounded-xl font-semibold hover:bg-red-600 transition-colors duration-300 flex items-center justify-center gap-2">
+					<p class="text-gray-500 mb-4">
+						O clássico que nunca sai de moda. Ideal para o dia a dia e ocasiões especiais.
+					</p>
+					<a
+						class="w-full bg-gray-900 text-white py-3 rounded-xl font-semibold hover:bg-primary transition-colors duration-300 flex items-center justify-center gap-2"
+						href={hrefAgendar}
+						target="_blank"
+					>
 						<span class="material-symbols-outlined">calendar_month</span>
 						Agendar
-					</button>
+					</a>
 				</div>
 			</div>
 		</div>
 
 		<div class="flex justify-center mt-10">
-			<a href="#" class="group flex items-center gap-2 text-gray-600 hover:text-red-600 font-semibold transition-colors">
+			<a href="#" class="group flex items-center gap-2 text-gray-600 hover:text-primary font-semibold transition-colors">
 				Ver todos os serviços
 				<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
 			</a>
@@ -234,65 +263,73 @@ import Layout from "../layout.astro";
 		<div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 md:p-12">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 				<div>
-					<span class="bg-red-600/20 text-red-400 px-4 py-1 rounded-full text-sm font-semibold">
+					<span class="bg-primary/20 text-primary px-4 py-1 rounded-full text-sm font-semibold">
 						Tabela de Preços
 					</span>
-					<h2 class="text-3xl md:text-4xl font-bold text-white mt-4 mb-6">
-						Preços que cabem no seu bolso
-					</h2>
+					<h2 class="text-3xl md:text-4xl font-bold text-white mt-4 mb-6">Preços que cabem no seu bolso</h2>
 					<p class="text-gray-400 mb-8">
 						Qualidade premium com preços acessíveis. Confira nossa tabela completa de serviços.
 					</p>
-					
+
 					<div class="space-y-4">
-						<div class="flex justify-between items-center py-4 border-b border-gray-700 group hover:border-red-600 transition-colors">
+						<div
+							class="flex justify-between items-center py-4 border-b border-gray-700 group hover:border-primary transition-colors"
+						>
 							<div class="flex items-center gap-3">
-								<span class="material-symbols-outlined text-red-500">content_cut</span>
+								<span class="material-symbols-outlined text-primary">content_cut</span>
 								<span class="text-white font-medium">Corte Simples</span>
 							</div>
 							<span class="text-white font-bold text-xl">R$ 25</span>
 						</div>
-						<div class="flex justify-between items-center py-4 border-b border-gray-700 group hover:border-red-600 transition-colors">
+						<div
+							class="flex justify-between items-center py-4 border-b border-gray-700 group hover:border-primary transition-colors"
+						>
 							<div class="flex items-center gap-3">
-								<span class="material-symbols-outlined text-red-500">face</span>
+								<span class="material-symbols-outlined text-primary">face</span>
 								<span class="text-white font-medium">Barba</span>
 							</div>
 							<span class="text-white font-bold text-xl">R$ 20</span>
 						</div>
-						<div class="flex justify-between items-center py-4 border-b border-gray-700 group hover:border-red-600 transition-colors">
+						<div
+							class="flex justify-between items-center py-4 border-b border-gray-700 group hover:border-primary transition-colors"
+						>
 							<div class="flex items-center gap-3">
-								<span class="material-symbols-outlined text-red-500">auto_awesome</span>
+								<span class="material-symbols-outlined text-primary">auto_awesome</span>
 								<span class="text-white font-medium">Degradê</span>
 							</div>
 							<span class="text-white font-bold text-xl">R$ 35</span>
 						</div>
-						<div class="flex justify-between items-center py-4 border-b border-gray-700 group hover:border-red-600 transition-colors">
+						<div
+							class="flex justify-between items-center py-4 border-b border-gray-700 group hover:border-primary transition-colors"
+						>
 							<div class="flex items-center gap-3">
-								<span class="material-symbols-outlined text-red-500">star</span>
+								<span class="material-symbols-outlined text-primary">star</span>
 								<span class="text-white font-medium">Barba + Cabelo</span>
 							</div>
 							<span class="text-white font-bold text-xl">R$ 45</span>
 						</div>
-						<div class="flex justify-between items-center py-4 border-b border-gray-700 group hover:border-red-600 transition-colors">
+						<div
+							class="flex justify-between items-center py-4 border-b border-gray-700 group hover:border-primary transition-colors"
+						>
 							<div class="flex items-center gap-3">
-								<span class="material-symbols-outlined text-red-500">spa</span>
+								<span class="material-symbols-outlined text-primary">spa</span>
 								<span class="text-white font-medium">Hidratação Capilar</span>
 							</div>
 							<span class="text-white font-bold text-xl">R$ 30</span>
 						</div>
 					</div>
 				</div>
-				
-				<div class="bg-gradient-to-br from-red-600 to-red-700 rounded-3xl p-8 text-center relative overflow-hidden">
-					<div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-					<div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
-					
-					<span class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-semibold">
-						🔥 Combo VIP
-					</span>
+
+				<div class="bg-gradient-to-br from-primary to-primary rounded-3xl p-8 text-center relative overflow-hidden">
+					<div class="absolute {nome}-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2">
+					</div>
+					<div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2">
+					</div>
+
+					<span class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-semibold"> 🔥 Combo VIP </span>
 					<h3 class="text-4xl md:text-5xl font-bold text-white mt-6 mb-2">R$ 70</h3>
-					<p class="text-red-100 mb-6">Economia de R$ 25!</p>
-					
+					<p class="text-primary/20 mb-6">Economia de R$ 25!</p>
+
 					<ul class="text-left space-y-3 mb-8">
 						<li class="flex items-center gap-2 text-white">
 							<span class="material-symbols-outlined text-yellow-300">check_circle</span>
@@ -315,8 +352,10 @@ import Layout from "../layout.astro";
 							Massagem relaxante
 						</li>
 					</ul>
-					
-					<button class="w-full bg-white text-red-600 py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-xl">
+
+					<button
+						class="w-full bg-white text-primary py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-xl"
+					>
 						Quero o Combo VIP
 					</button>
 				</div>
@@ -335,14 +374,16 @@ import Layout from "../layout.astro";
 					</div>
 					<div class="space-y-4 pt-8">
 						<img src="servico1.jpg" class="w-full h-[280px] object-cover rounded-2xl shadow-lg" />
-						<div class="bg-red-600 rounded-2xl p-6 text-white text-center">
+						<div class="bg-primary rounded-2xl p-6 text-white text-center">
 							<p class="text-4xl font-bold">10+</p>
-							<p class="text-red-100">Anos de experiência</p>
+							<p class="text-primary/20">Anos de experiência</p>
 						</div>
 					</div>
 				</div>
 				<!-- Floating badge -->
-				<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 rounded-2xl shadow-xl flex items-center gap-3">
+				<div
+					class="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 rounded-2xl shadow-xl flex items-center gap-3"
+				>
 					<div class="flex -space-x-2">
 						<div class="w-10 h-10 bg-gray-300 rounded-full border-2 border-white"></div>
 						<div class="w-10 h-10 bg-gray-400 rounded-full border-2 border-white"></div>
@@ -354,40 +395,39 @@ import Layout from "../layout.astro";
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="flex flex-col gap-6">
-				<span class="bg-red-100 text-red-600 px-4 py-1 rounded-full text-sm font-semibold w-fit">
-					Sobre Nós
-				</span>
+				<span class="bg-primary/20 text-primary px-4 py-1 rounded-full text-sm font-semibold w-fit"> Sobre Nós </span>
 				<h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-					Um pouco mais sobre a <span class="text-red-600">Barbearia Top</span>
+					Um pouco mais sobre a <span class="text-primary">Barbearia {nome}</span>
 				</h2>
 				<p class="text-gray-600 leading-relaxed text-lg">
-					A Barbearia Top é dedicada a oferecer os melhores serviços de
-					barbearia com qualidade e preço acessível. Com mais de 10 anos de experiência,
-					nossa equipe de profissionais está pronta para transformar seu visual.
+					A Barbearia {nome} é dedicada a oferecer os melhores serviços de barbearia com qualidade e preço acessível. Com
+					mais de 10 anos de experiência, nossa equipe de profissionais está pronta para transformar seu visual.
 				</p>
-				
+
 				<div class="grid grid-cols-2 gap-4 mt-4">
 					<div class="flex items-center gap-3 bg-gray-50 p-4 rounded-xl">
-						<span class="material-symbols-outlined text-red-600 text-2xl">ac_unit</span>
+						<span class="material-symbols-outlined text-primary text-2xl">ac_unit</span>
 						<span class="text-gray-700 font-medium">Ambiente climatizado</span>
 					</div>
 					<div class="flex items-center gap-3 bg-gray-50 p-4 rounded-xl">
-						<span class="material-symbols-outlined text-red-600 text-2xl">wifi</span>
+						<span class="material-symbols-outlined text-primary text-2xl">wifi</span>
 						<span class="text-gray-700 font-medium">Wi-Fi grátis</span>
 					</div>
 					<div class="flex items-center gap-3 bg-gray-50 p-4 rounded-xl">
-						<span class="material-symbols-outlined text-red-600 text-2xl">local_parking</span>
+						<span class="material-symbols-outlined text-primary text-2xl">local_parking</span>
 						<span class="text-gray-700 font-medium">Estacionamento</span>
 					</div>
 					<div class="flex items-center gap-3 bg-gray-50 p-4 rounded-xl">
-						<span class="material-symbols-outlined text-red-600 text-2xl">coffee</span>
+						<span class="material-symbols-outlined text-primary text-2xl">coffee</span>
 						<span class="text-gray-700 font-medium">Café cortesia</span>
 					</div>
 				</div>
-				
-				<button class="mt-4 bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-red-600 transition-colors w-fit flex items-center gap-2">
+
+				<button
+					class="mt-4 bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary transition-colors w-fit flex items-center gap-2"
+				>
 					<span class="material-symbols-outlined">info</span>
 					Saiba mais sobre nós
 				</button>
@@ -398,60 +438,89 @@ import Layout from "../layout.astro";
 	<!-- Team Section -->
 	<section class="mt-32 px-2">
 		<div class="flex flex-col justify-center items-center gap-4 mb-12">
-			<span class="bg-red-100 text-red-600 px-4 py-1 rounded-full text-sm font-semibold">
-				Nossa Equipe
-			</span>
-			<h2 class="text-center text-3xl md:text-5xl font-bold text-gray-900">
-				Nossos Barbeiros
-			</h2>
+			<span class="bg-primary/20 text-primary px-4 py-1 rounded-full text-sm font-semibold"> Nossa Equipe </span>
+			<h2 class="text-center text-3xl md:text-5xl font-bold text-gray-900">Nossos Barbeiros</h2>
 			<p class="text-gray-500 text-center max-w-lg">
 				Profissionais experientes e apaixonados pelo que fazem. Conheça quem vai cuidar do seu visual!
 			</p>
 		</div>
-		
+
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			<div class="group text-center">
 				<div class="relative mb-6 overflow-hidden rounded-3xl">
-					<img src="profile.jpg" class="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500" />
-					<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-					<div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
-						<a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors">
+					<img
+						src="profile.jpg"
+						class="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
+					/>
+					<div
+						class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+					>
+					</div>
+					<div
+						class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0"
+					>
+						<a
+							href="#"
+							class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+						>
 							<img src="icon_instagram.png" alt="Instagram" class="w-5 h-5" />
 						</a>
 					</div>
 				</div>
 				<h3 class="text-xl font-bold text-gray-900">Carlos Silva</h3>
-				<p class="text-red-600 font-medium">Barbeiro Chefe</p>
+				<p class="text-primary font-medium">Barbeiro Chefe</p>
 				<p class="text-gray-500 text-sm mt-2">Especialista em degradê e barba</p>
 			</div>
-			
+
 			<div class="group text-center">
 				<div class="relative mb-6 overflow-hidden rounded-3xl">
-					<img src="profile.jpg" class="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500" />
-					<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-					<div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
-						<a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors">
+					<img
+						src="profile.jpg"
+						class="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
+					/>
+					<div
+						class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+					>
+					</div>
+					<div
+						class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0"
+					>
+						<a
+							href="#"
+							class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+						>
 							<img src="icon_instagram.png" alt="Instagram" class="w-5 h-5" />
 						</a>
 					</div>
 				</div>
 				<h3 class="text-xl font-bold text-gray-900">João Santos</h3>
-				<p class="text-red-600 font-medium">Barbeiro Senior</p>
+				<p class="text-primary font-medium">Barbeiro Senior</p>
 				<p class="text-gray-500 text-sm mt-2">Especialista em cortes clássicos</p>
 			</div>
-			
+
 			<div class="group text-center">
 				<div class="relative mb-6 overflow-hidden rounded-3xl">
-					<img src="profile.jpg" class="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500" />
-					<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-					<div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
-						<a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors">
+					<img
+						src="profile.jpg"
+						class="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
+					/>
+					<div
+						class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+					>
+					</div>
+					<div
+						class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0"
+					>
+						<a
+							href="#"
+							class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+						>
 							<img src="icon_instagram.png" alt="Instagram" class="w-5 h-5" />
 						</a>
 					</div>
 				</div>
 				<h3 class="text-xl font-bold text-gray-900">Pedro Lima</h3>
-				<p class="text-red-600 font-medium">Barbeiro</p>
+				<p class="text-primary font-medium">Barbeiro</p>
 				<p class="text-gray-500 text-sm mt-2">Especialista em pigmentação</p>
 			</div>
 		</div>
@@ -460,18 +529,14 @@ import Layout from "../layout.astro";
 	<!-- Testimonials Section -->
 	<section class="mt-32 px-2">
 		<div class="flex flex-col justify-center items-center gap-4 mb-12">
-			<span class="bg-red-100 text-red-600 px-4 py-1 rounded-full text-sm font-semibold">
-				Depoimentos
-			</span>
-			<h2 class="text-center text-3xl md:text-5xl font-bold text-gray-900">
-				O Que Dizem Nossos Clientes
-			</h2>
+			<span class="bg-primary/20 text-primary px-4 py-1 rounded-full text-sm font-semibold"> Depoimentos </span>
+			<h2 class="text-center text-3xl md:text-5xl font-bold text-gray-900">O Que Dizem Nossos Clientes</h2>
 		</div>
-		
+
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 			<div class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 relative">
-				<div class="absolute -top-4 left-8">
-					<div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+				<div class="absolute -{nome}-4 left-8">
+					<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
 						<span class="text-white text-2xl">"</span>
 					</div>
 				</div>
@@ -483,10 +548,13 @@ import Layout from "../layout.astro";
 					<span class="material-symbols-outlined">star</span>
 				</div>
 				<p class="text-gray-600 mb-6 leading-relaxed">
-					"Melhor barbearia da cidade! Atendimento excelente e o corte ficou perfeito. O ambiente é muito agradável e os profissionais super atenciosos."
+					"Melhor barbearia da cidade! Atendimento excelente e o corte ficou perfeito. O ambiente é muito agradável e os
+					profissionais super atenciosos."
 				</p>
 				<div class="flex items-center gap-4">
-					<div class="w-14 h-14 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center">
+					<div
+						class="w-14 h-14 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center"
+					>
 						<span class="material-symbols-outlined text-gray-500 text-2xl">person</span>
 					</div>
 					<div>
@@ -495,10 +563,10 @@ import Layout from "../layout.astro";
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 relative">
-				<div class="absolute -top-4 left-8">
-					<div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+				<div class="absolute -{nome}-4 left-8">
+					<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
 						<span class="text-white text-2xl">"</span>
 					</div>
 				</div>
@@ -510,10 +578,13 @@ import Layout from "../layout.astro";
 					<span class="material-symbols-outlined">star</span>
 				</div>
 				<p class="text-gray-600 mb-6 leading-relaxed">
-					"Ambiente super agradável, profissionais atenciosos. Meu corte favorito é o degradê e eles fazem muito bem! Recomendo para todos."
+					"Ambiente super agradável, profissionais atenciosos. Meu corte favorito é o degradê e eles fazem muito bem!
+					Recomendo para todos."
 				</p>
 				<div class="flex items-center gap-4">
-					<div class="w-14 h-14 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center">
+					<div
+						class="w-14 h-14 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center"
+					>
 						<span class="material-symbols-outlined text-gray-500 text-2xl">person</span>
 					</div>
 					<div>
@@ -522,10 +593,10 @@ import Layout from "../layout.astro";
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 relative">
-				<div class="absolute -top-4 left-8">
-					<div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+				<div class="absolute -{nome}-4 left-8">
+					<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
 						<span class="text-white text-2xl">"</span>
 					</div>
 				</div>
@@ -537,10 +608,13 @@ import Layout from "../layout.astro";
 					<span class="material-symbols-outlined">star</span>
 				</div>
 				<p class="text-gray-600 mb-6 leading-relaxed">
-					"Preço justo e qualidade top! O combo barba + cabelo é excelente. Sempre saio satisfeito e renovado. Virei cliente fiel!"
+					"Preço justo e qualidade {nome}! O combo barba + cabelo é excelente. Sempre saio satisfeito e renovado. Virei
+					cliente fiel!"
 				</p>
 				<div class="flex items-center gap-4">
-					<div class="w-14 h-14 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center">
+					<div
+						class="w-14 h-14 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center"
+					>
 						<span class="material-symbols-outlined text-gray-500 text-2xl">person</span>
 					</div>
 					<div>
@@ -555,14 +629,10 @@ import Layout from "../layout.astro";
 	<!-- Location Section -->
 	<section class="mt-32 px-2" id="localizacao">
 		<div class="flex flex-col justify-center items-center gap-4 mb-12">
-			<span class="bg-red-100 text-red-600 px-4 py-1 rounded-full text-sm font-semibold">
-				Localização
-			</span>
-			<h2 class="text-center text-3xl md:text-5xl font-bold text-gray-900">
-				Onde nos encontrar
-			</h2>
+			<span class="bg-primary/20 text-primary px-4 py-1 rounded-full text-sm font-semibold"> Localização </span>
+			<h2 class="text-center text-3xl md:text-5xl font-bold text-gray-900">Onde nos encontrar</h2>
 		</div>
-		
+
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			<div class="bg-gray-200 rounded-3xl overflow-hidden h-[400px] relative">
 				<!-- Map placeholder - você pode adicionar um iframe do Google Maps aqui -->
@@ -573,53 +643,57 @@ import Layout from "../layout.astro";
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
 				<h3 class="text-2xl font-bold text-gray-900 mb-8">Informações de Contato</h3>
-				
+
 				<div class="space-y-6">
 					<div class="flex items-start gap-4">
-						<div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-							<span class="material-symbols-outlined text-red-600 text-2xl">location_on</span>
+						<div class="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+							<span class="material-symbols-outlined text-primary text-2xl">location_on</span>
 						</div>
 						<div>
 							<p class="font-bold text-gray-900">Endereço</p>
-							<p class="text-gray-600">Rua das Barbearias, 123<br/>Centro - São Paulo, SP</p>
+							<p class="text-gray-600">Rua das Barbearias, 123<br />Centro - São Paulo, SP</p>
 						</div>
 					</div>
-					
+
 					<div class="flex items-start gap-4">
-						<div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-							<span class="material-symbols-outlined text-red-600 text-2xl">phone</span>
+						<div class="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+							<span class="material-symbols-outlined text-primary text-2xl">phone</span>
 						</div>
 						<div>
 							<p class="font-bold text-gray-900">Telefone</p>
 							<p class="text-gray-600">(11) 99999-9999</p>
 						</div>
 					</div>
-					
+
 					<div class="flex items-start gap-4">
-						<div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-							<span class="material-symbols-outlined text-red-600 text-2xl">schedule</span>
+						<div class="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+							<span class="material-symbols-outlined text-primary text-2xl">schedule</span>
 						</div>
 						<div>
 							<p class="font-bold text-gray-900">Horário</p>
-							<p class="text-gray-600">Seg - Sex: 9h às 20h<br/>Sábado: 9h às 18h<br/>Domingo: Fechado</p>
+							<p class="text-gray-600">Seg - Sex: 9h às 20h<br />Sábado: 9h às 18h<br />Domingo: Fechado</p>
 						</div>
 					</div>
-					
+
 					<div class="flex items-start gap-4">
-						<div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-							<span class="material-symbols-outlined text-red-600 text-2xl">mail</span>
+						<div class="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+							<span class="material-symbols-outlined text-primary text-2xl">mail</span>
 						</div>
 						<div>
 							<p class="font-bold text-gray-900">E-mail</p>
-							<p class="text-gray-600">contato@barbeariatop.com</p>
+							<p class="text-gray-600">contato@barbearia{nome}.com</p>
 						</div>
 					</div>
 				</div>
-				
-				<a href="https://wa.me/5511999999999" target="_blank" class="mt-8 w-full bg-green-500 text-white py-4 rounded-2xl font-bold hover:bg-green-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40">
+
+				<a
+					href="https://wa.me/5511999999999"
+					target="_blank"
+					class="mt-8 w-full bg-green-500 text-white py-4 rounded-2xl font-bold hover:bg-green-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40"
+				>
 					<span class="material-symbols-outlined">chat</span>
 					Fale pelo WhatsApp
 				</a>
@@ -629,31 +703,35 @@ import Layout from "../layout.astro";
 
 	<!-- CTA Section -->
 	<section class="mt-32 px-2">
-		<div class="bg-gradient-to-r from-red-600 to-red-700 rounded-3xl p-8 md:p-16 text-center relative overflow-hidden">
+		<div class="bg-gradient-to-r from-primary to-primary rounded-3xl p-8 md:p-16 text-center relative overflow-hidden">
 			<!-- Decorative elements -->
-			<div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+			<div class="absolute {nome}-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
 			<div class="absolute bottom-0 right-0 w-48 h-48 bg-white/10 rounded-full translate-x-1/2 translate-y-1/2"></div>
-			<div class="absolute top-1/2 left-1/4 w-4 h-4 bg-white/30 rounded-full"></div>
-			<div class="absolute top-1/3 right-1/4 w-6 h-6 bg-white/20 rounded-full"></div>
-			
+			<div class="absolute {nome}-1/2 left-1/4 w-4 h-4 bg-white/30 rounded-full"></div>
+			<div class="absolute {nome}-1/3 right-1/4 w-6 h-6 bg-white/20 rounded-full"></div>
+
 			<div class="relative z-10">
 				<span class="material-symbols-outlined text-white/30 text-8xl mb-4">content_cut</span>
-				<h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
-					Pronto para transformar seu visual?
-				</h2>
-				<p class="text-red-100 mb-8 max-w-2xl mx-auto text-lg">
-					Agende agora mesmo seu horário e venha conhecer a Barbearia Top. 
-					Qualidade, preço justo e atendimento de primeira!
+				<h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Pronto para transformar seu visual?</h2>
+				<p class="text-primary/20 mb-8 max-w-2xl mx-auto text-lg">
+					Agende agora mesmo seu horário e venha conhecer a Barbearia {nome}. Qualidade, preço justo e atendimento de
+					primeira!
 				</p>
 				<div class="flex flex-col md:flex-row gap-4 justify-center">
-					<button class="bg-white text-red-600 px-10 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-2">
+					<a
+						class="bg-white text-primary px-10 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-2"
+						href={hrefAgendar}
+						target="_blank"
+					>
 						<span class="material-symbols-outlined">calendar_month</span>
 						Agendar Horário
-					</button>
-					<button class="bg-transparent text-white px-10 py-4 rounded-xl font-bold border-2 border-white hover:bg-white hover:text-red-600 transition-all duration-300 flex items-center justify-center gap-2">
+					</a>
+					<!-- <button
+						class="bg-transparent text-white px-10 py-4 rounded-xl font-bold border-2 border-white hover:bg-white hover:text-primary transition-all duration-300 flex items-center justify-center gap-2"
+					>
 						<span class="material-symbols-outlined">call</span>
 						Ligar Agora
-					</button>
+					</button> -->
 				</div>
 			</div>
 		</div>
@@ -662,8 +740,13 @@ import Layout from "../layout.astro";
 
 <style>
 	@keyframes bounce-slow {
-		0%, 100% { transform: translateY(0); }
-		50% { transform: translateY(-10px); }
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-10px);
+		}
 	}
 	.animate-bounce-slow {
 		animation: bounce-slow 3s ease-in-out infinite;
