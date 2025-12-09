@@ -4,3 +4,8 @@
     --color-primary: #dc2626;
     --color-secondary: #111827;
 }
+
+html, body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
